@@ -56,6 +56,13 @@ employee_id INT,
 PRIMARY KEY (id_training)
 )COMMENT 'TRAINING HISTORY';
 
+CREATE TABLE LOGS (
+    log_id INT NOT NULL AUTO_INCREMENT,
+    log_message VARCHAR(255),
+    log_timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (log_id)
+) COMMENT 'Registro de eventos del sistema';
+
 
 -- ALTER
 
