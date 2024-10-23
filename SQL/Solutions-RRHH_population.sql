@@ -367,6 +367,8 @@ INSERT INTO PAYROLL (employee_id, salary, bonus, deductions, payment_date) VALUE
 (47, 3300.00, 240.00, 110.00, '2024-01-31'),
 (48, 3600.00, 200.00, 150.00, '2024-01-31'),
 (49, 4500.00, 500.00, 300.00, '2024-01-31');
+(50, 4100.00, 410.00, 260.00, '2024-01-31'),
+
 
 INSERT INTO BENEFITS (employee_id, benefit_name, benefit_description, start_date, end_date) VALUES
 (1, 'Health Insurance', 'Comprehensive health insurance plan', '2024-01-01', '2025-01-01'),
@@ -418,6 +420,8 @@ INSERT INTO BENEFITS (employee_id, benefit_name, benefit_description, start_date
 (47, 'End-of-Year Bonuses', 'Bonuses at the end of the fiscal year', '2024-01-01', '2025-01-01'),
 (48, 'Annual Health Screenings', 'Free health check-ups for employees', '2024-01-01', '2025-01-01'),
 (49, 'Loyalty Rewards', 'Benefits for long-term employees', '2024-01-01', '2025-01-01');
+(50, 'Cookie Subsidy', 'Benefits for long-term employees', '2024-01-01', '2025-01-01');
+
 
 INSERT INTO PROJECTS (name_project, description_project, start_date, finish_date, status_project) VALUES
 ('Project Alpha', 'Initial phase of the project.', '2024-01-01', '2024-06-30', 'In Progress'),
@@ -472,6 +476,8 @@ INSERT INTO PROJECTS (name_project, description_project, start_date, finish_date
 ('Project Z26', 'Cross-functional team collaboration.', '2024-02-20', '2024-09-20', 'In Progress'),
 ('Project AA27', 'Compliance training for employees.', '2024-03-10', '2024-06-10', 'Planned'),
 ('Project AB28', 'Employee satisfaction analysis.', '2024-04-01', '2024-12-01', 'In Progress');
+('Project AA37', 'Compliance training for employees.', '2024-03-10', '2024-06-05', 'Planned'),
+
 
 INSERT INTO EMPLOYEE_PROJECT (employee_id, id_project, role_in_project) VALUES
 (1, 1, 'Project Manager'),
@@ -570,6 +576,8 @@ INSERT INTO EMPLOYEE_PROJECT (employee_id, id_project, role_in_project) VALUES
 (47, 49, 'Developer'),
 (48, 46, 'Tester'),
 (49, 47, 'Business Analyst');
+(50, 41, ' Analyst');
+
 
 INSERT INTO LEAVE_REQUESTS (employee_id, start_date, end_date, leave_reason, status_leave_request) VALUES
 (1, '2024-01-05', '2024-01-10', 'Vacation', 'Approved'),
@@ -621,6 +629,8 @@ INSERT INTO LEAVE_REQUESTS (employee_id, start_date, end_date, leave_reason, sta
 (47, '2024-11-05', '2024-11-10', 'Sick Leave', 'Approved'),
 (48, '2024-12-20', '2024-12-25', 'Vacation', 'Denied'),
 (49, '2024-01-10', '2024-01-15', 'Medical', 'Approved');
+(50, '2024-08-10', '2024-01-16', 'Vacation', 'Approved');
+
 
 INSERT INTO EVALUATIONS (employee_id, evaluation_date, score, comments) VALUES
 (1, '2024-01-10', 85.50, 'Excellent performance throughout the year.'),
@@ -672,6 +682,8 @@ INSERT INTO EVALUATIONS (employee_id, evaluation_date, score, comments) VALUES
 (47, '2024-10-01', 91.00, 'Very proactive in seeking solutions.'),
 (48, '2024-10-05', 80.00, 'Needs guidance in task execution.'),
 (49, '2024-10-10', 88.00, 'Displays enthusiasm for projects.');
+(50, '2024-10-11', 80.00, 'Displays enthusiasm for projects.');
+
 
 INSERT INTO TASKS (task_name, task_description, due_date, employee_id, id_project, status_task) VALUES
 ('Design Mockup', 'Create initial design mockup for the project.', '2024-02-10', 1, 1, 'Pending'),
@@ -723,6 +735,8 @@ INSERT INTO TASKS (task_name, task_description, due_date, employee_id, id_projec
 ('Prepare for Review', 'Prepare documents for the project review meeting.', '2024-09-30', 47, 2, 'Pending'),
 ('Task Delegation', 'Delegate tasks among team members.', '2024-10-05', 48, 3, 'In Progress'),
 ('Wrap Up Project', 'Conclude the project and document lessons learned.', '2024-10-10', 49, 1, 'Completed');
+('Wrap Up Project', 'Conclude the project and document lessons learned.', '2024-10-26', 50, 3, 'Completed');
+
 
 
 INSERT INTO CONTRACTS (employee_id, start_date, end_date, contract_type, salary) VALUES
@@ -775,6 +789,7 @@ INSERT INTO CONTRACTS (employee_id, start_date, end_date, contract_type, salary)
 (47, '2024-08-15', '2025-08-14', 'Full-time', 3900.00),
 (48, '2024-09-01', '2025-08-31', 'Contract', 3000.00),
 (49, '2024-09-10', '2025-09-09', 'Part-time', 2100.00);
+(50, '2024-09-30', '2025-01-09', 'Contract', 2500.00);
 
 
 INSERT INTO DISCIPLINARY_ACTIONS (employee_id, action_date, action_description, action_status) VALUES
@@ -827,3 +842,5 @@ INSERT INTO DISCIPLINARY_ACTIONS (employee_id, action_date, action_description, 
 (47, '2024-08-15', 'Poor attendance', 'Resolved'),
 (48, '2024-09-01', 'Insubordination', 'Resolved'),
 (49, '2024-09-10', 'Disrespect towards management', 'Pending');
+(50, '2024-09-01', 'Disrespect towards management', 'In Progress');
+
