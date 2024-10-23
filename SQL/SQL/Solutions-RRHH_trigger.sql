@@ -1,21 +1,21 @@
 DELIMITER //
 
-CREATE TRIGGER trg_AssistanceTypeUpdate
-AFTER INSERT ON ASSISTANCE
+CREATE TRIGGER trg_AssistanceTypeBeforeInsert
+BEFORE INSERT ON ASSISTANCE
 FOR EACH ROW
 BEGIN
     IF NEW.check_in_time IS NOT NULL AND NEW.check_out_time IS NOT NULL THEN
-        UPDATE ASSISTANCE
-        SET type_assistance = 'CO'  -- Asistencia completada
-        WHERE id_assistance = NEW.id_assistance;
+        SET NEW.type_assistance = 'CO';  -- Asistencia completada
     ELSEIF NEW.check_in_time IS NOT NULL AND NEW.check_out_time IS NULL THEN
-        UPDATE ASSISTANCE
-        SET type_assistance = 'IN'  -- Solo entrada registrada
-        WHERE id_assistance = NEW.id_assistance;
+        SET NEW.type_assistance = 'IN';  
+    ELSE
+        SET NEW.type_assistance = NULL;  
     END IF;
 END //
 
 DELIMITER ;
+
+
 
 
 DELIMITER //
