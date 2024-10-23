@@ -1,5 +1,5 @@
 
---ADD VIEW 1
+
 
 CREATE VIEW vw_EmployeeAssistance AS
 SELECT 
@@ -17,7 +17,6 @@ LEFT JOIN
     ASSISTANCE a ON e.employee_id = a.employee_id;
 
 
---ADD VIEW 2
 
 CREATE VIEW vw_EmployeeTraining AS
 SELECT 
@@ -34,7 +33,7 @@ LEFT JOIN
     TRAINING t ON e.employee_id = t.employee_id;
 
 
---ADD VIEW 3
+
 
 CREATE VIEW vw_EmployeePayroll AS
 SELECT 
@@ -50,7 +49,7 @@ FROM
 LEFT JOIN 
     PAYROLL p ON e.employee_id = p.employee_id;
 
---ADD VIEW 4
+
 
     
     CREATE VIEW vw_EmployeeProjects AS
@@ -71,7 +70,7 @@ LEFT JOIN
     PROJECTS pr ON ep.id_project = pr.id_project;
 
 
---ADD VIEW 5
+
 
 CREATE VIEW vw_EmployeeWorkRecord AS
 SELECT 
